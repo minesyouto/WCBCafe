@@ -1,0 +1,367 @@
+@charset "UTF-8";
+/*
+コードの文字化けを防ぐ
+*/
+/* 共通部分
+-------------------*/
+html {
+    font-size: 100%;
+    /*
+    閲覧ユーザーの設定した文字サイズを正しく反映するようにする
+    */
+}
+body {
+    font-family: "Yu Gothic Medium", "游ゴシック Midium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ pro W3", sans-serif;
+    /*
+    表示される書体の指定
+    */
+    line-height: 1.7;
+    /*
+    行の高さの指定
+    */
+        color: #432;
+    /*
+    カラーの指定
+    */
+}
+a {
+    text-decoration: none;
+    /*
+    html内<a>タグの傍線の指定
+    */
+}
+img {
+    max-width: 100%;
+    /*
+    画像の大きさの指定
+    100%にすることによって親要素よりも大きくなるのを防ぐ
+    */
+}
+/* HEADER
+---------------------------------- */
+.logo {
+    width: 210px;
+    margin-top: 14px;
+    /*
+    width=表示するロゴの横幅を指定
+    margin=marginで空白を指定。今回はmargin-topで要素の上の空白を指定した
+    */
+}
+.main-nav {
+    display: flex;
+    /*-- displayをflexに指定することでmain-navの要素(ナビゲーションメニュー)を横並びに置くことができる-- */
+    font-size: 1.25rem;
+    /*-- remで指定することでhtmlの基準サイズから文字サイズを指定することができる --*/
+    text-transform: uppercase;
+    /*-- text-transformで文字の大文字、小文字等を変換することができる
+         uppercaseでは全ての文字を大文字に変換する --*/
+    margin-top: 34px;
+    /*-- トップからの空白を34pxに指定 --*/
+    list-style: none;
+    /*-- list-styleはリストの項目のトップに表示されるマーカーの指定ができるプロパティ
+         noneではマーカーを非表示に設定 --*/
+}
+.main-nav li {
+    margin-left: 36px;
+    /*-- ナビゲーション内の各要素を表示するときの空白を設定 --*/
+}
+.main-nav a {
+    color: #432;
+    /*-- ナビゲーション内のリスとの文字色を設定 --*/
+}
+.main-nav a:hover {
+    color: #0bd;
+    /*-- a:hoverではリンクにカーソルを置いた時の文字色の変化を指定することができる --*/
+}
+.page-header {
+    /*-- page^headerの要素(ロゴ、ナビゲーションメニュー)を横並びに設定する --*/
+    display: flex;
+    /*-- display: flexで横並びに設定する --*/
+    justify-content: space-between;
+    /*-- justify-contentは要素の配列を細かく指定できるプロパティである。
+         betweenは両端に各要素を置くことができる。 --*/
+}
+.wrapper {
+    max-width: 1100px;
+    /* max-widthで画面のサイズの最大横幅を指定 */
+    margin: 0 auto;
+    /* ボックスを画面の中央に配置 */
+    padding: 0 4%;
+    /* paddingは要素のボックスの空白部分を作成することができる */
+    /* 0.4%にしておくことでスマートフォンなどでも見やすくなる */
+}
+/* HOME
+-----------------------------*/
+.home-content {
+    text-align: center;
+    /* text-aliginでテキストの表示場所を設定 */
+    /* centerで中央寄せに。 */
+    margin-top: 10%;
+    /* トップからの余白の設定 */
+}
+.home-content p {
+    font-size: 1.125rem;
+    /* <p>タグのフォントサイズの設定 */
+    margin: 10px 0 42px;
+    /* 余白の設定 */
+    /* 上、左右、下の余白を設定している */
+}
+/* 見出し */
+.page-title {
+    font-size: 5rem;
+    font-family: 'Philosopher', serif;
+    text-transform: uppercase;
+    font-weight: normal;
+    /* ページタイトル(We'll~~)のフォント等を指定し、大文字変換している */
+    /* font-weightは文字の太さを指定している */
+}
+
+/* ボタン */
+.button {
+    font-size: 1.375rem;
+    /* メニューを見るボタンのフォントサイズの指定 */
+    background: #0bd;
+    /* ボタンのバックグラウンドカラーの指定 */
+    color: #fff;
+    /* フォント自体のカラーの指定 */
+    border-radius: 5px;
+    /* 角丸を設定 */
+    padding: 18px 32px;
+    /* ボタンのボックスの空白の設定 */
+}
+.button:hover {
+    background: #0090aa;
+    /* hoverでカーソルを合わせた時の文字色を指定 */
+}
+/* 大きな背景画像 */
+.big-bg {
+    background-size: cover;
+    /* background-sizeをcoverにしておくことで縦横の比率を保ったまま画面いっぱいのサイズにできる */
+    background-position: center top;
+    /* 背景画像の位置の座標をx,yで指定している */
+    background-repeat: no-repeat;
+    /* 背景画像の繰り返し表示をオフにしている */
+}
+#home {
+    background-image: url(../images/main-bg.jpg);
+    /* 背景画像の指定 */
+    min-height: 100vh;
+    /* 画面の高さの指定 */
+    /* 背景画像等メインと直接関係のないものはCSSに記述して処理を軽くする */
+}
+#home .page-title {
+    text-transform: none;
+    /* テキストの変換を行わないようにする */
+}
+/* NEWS
+------------------------------- */
+#news {
+    background-image: url(../images/news-bg.jpg);
+    height: 270px;
+    margin-bottom: 40px;
+    /* ページ上部の背景画像の設定 */
+}
+#news .page-title {
+    text-align: center;
+    /* テキストを中央に表示 */
+}
+/* フッター
+--------------------------*/
+footer {
+    background: #432;
+    text-align: center;
+    padding: 26px 0;
+    margin-top: 50px;
+}
+footer p {
+    color: #fff;
+    font-size: 0.875rem;
+}
+/* 記事部分 */
+article {
+    width: 74%;
+}
+
+/* サイドバー */
+aside {
+    width: 22%;
+}
+.news-contents {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    /* 記事部分、サイドバー部分を両端に設定 */
+}
+.post-info {
+    position: relative;
+    padding-top: 4px;
+    margin-bottom: 40px;
+}
+.post-date {
+    background: #0bd;
+    border-radius: 50%;
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    font-size: 1.625rem;
+    text-align: center;
+    /* 日付部分の背景、角丸、文字色、横幅、高さ、フォントサイズ、テキストの位置を指定 */
+    position: absolute;
+    top: 0;
+    padding-top: 10px;
+    /* 前述のpost-infoからの絶対位置と調整の指定 */
+}
+.post-date span {
+    font-size: 1rem;
+    border-top: 1px rgba(255,255,255,.5) solod;
+    padding-top: 6px;
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+    /* 日付の指定と日付の上に水平線を入れる指定 */
+    /* 色の指定ではrgbsを使えば不透明度の設定もできる */
+}
+.post-title {
+    font-family: "Yu Mincho", "YUMincho", serif;
+    font-size: 2rem;
+    font-weight: normal;
+}
+.post-title,
+.post-cat {
+    margin-left: 120px;
+    /* margin-leftで左からの位置の調整を指定 */
+}
+article img {
+    margin-bottom: 20px;
+}
+article p {
+    margin-bottom: 1rem;
+}
+.sub-title {
+    font-size: 1.375rem;
+    padding: 0 8px 8px;
+    border-bottom: 2px #0bd solid;
+    /* 下線の設定 */
+    font-weight: normal;
+}
+aside p {
+    padding: 12px 10px;
+}
+.sub-menu {
+    margin-bottom: 60px;
+    list-style: none;
+    /* リストの丸いマークを非表示にする */
+}
+.sub-menu li {
+    border-bottom: 1px #ddd solid;
+    /* 下線の設定 */
+}
+.sub-menu a {
+    color: #432;
+    padding: 10px;
+    display: block;
+    /* リンクのクリックできる範囲を広げる */
+}
+.sub-menu a:hover {
+    color: #0bd;
+    /* カーソルを合わせた時の装飾 */
+}
+
+/* レスポンシブに対応させる */
+@media (max-width: 600px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+
+    /* HEADER */
+    .main-nav {
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+    .main-nav li {
+        margin: 0 20px;
+    }
+
+    /* HOME */
+    .home-content {
+        margin-top: 20%;
+    }
+    /* 共通部分レスポンシブ対応 */
+    .page-header {
+        flex-direction: column;
+        /* flex-directionでどの方向に並べるかを指定できる */
+        /* columnは縦方向に並べることができる */
+        align-items: center;
+        /* align-items: centerを使うことで中央に寄せることができる */
+    }
+    /* ニュースページレスポンシブ対応 */
+    .news-contents {
+        flex-direction: column;
+    }
+    /* コンテンツを縦に並べる */
+    article,
+    aside {
+        width: 100%;
+    }
+    #news .page-title {
+        margin-top: 30px;
+    }
+    aside {
+        margin-top: 60px;
+    }
+    .post-info {
+        margin-bottom: 30px;
+    }
+    .post-date {
+        width: 70px;
+        height: 70px;
+        font-size: 1rem;
+    }
+    .post-date span {
+        font-size: 0.875rem;
+        padding-top: 2px;
+    }
+    .post-title {
+        font-size: 1.375rem;
+    }
+    .post-cat {
+        font-size: 0.875rem;
+        margin-top: 10px;
+    }
+    .post-title,
+    .post-cat {
+        margin-left: 80px;
+    }
+    /* メニューページレスポンシブ対応 */
+    .menu-content {
+        margin-top: 20%;
+    }
+
+
+}
+/* MENU
+----------------------------------- */
+#menu {
+    background-image: url(../images/menu-bg.jpg);
+    min-height: 100vh;
+}
+.menu-content {
+    max-width: 560px;
+    margin-top: 10%;
+}
+.menu-content .page-title {
+    text-align: center;
+}
+.menu-content p {
+    font-size: 1.125rem;
+    margin: 10px 0 0;
+}
+.grid {
+    display: grid;
+    gap: 26px;
+    grid-template-columns: repeat(3, minmax(240px, 1fr));
+    /* repeatを使うことで同じ記述を減らし、わかりやすくできる */
+    /* minmaxを使うことで要素の幅が240pxより大きくならず、画面の幅に合わせて伸縮するようにできる */
+    margin-top: 6%;
+    margin-bottom: 50px;
+  }

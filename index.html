@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <!--
+            文字コードを指定
+        -->
+        <title>WCB Cafe</title>
+        <!--
+            Webページのタイトル部分の表記を指定
+        -->
+        <meta name="description" content="ブレンドコーヒーとヘルシーなオーガニックフードを提供するカフェ">
+        <!--
+            検索ページで表示される説明文を記入
+        -->
+
+    <!-- CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <!--
+            ress.css(どのブラウザーで表示しても見え方が異ならないようにリセットするcssデータ)をURLからセットしている
+        -->
+        <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+        <!--
+            GoogleFontからフォントを指定
+        -->
+        <link href="css/style.css" rel="stylesheet">
+        <!--
+            これから指定するCSSを表記
+        -->
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <!-- ファビコンの指定 -->
+    </head>
+
+    <body>
+        <div id="home" class="big-bg">
+            <header class="page-header wrapper">
+            <!--
+                ページヘッダー部分の作成
+            -->
+            <h1><a href="index.html"><img class="logo" src="images/logo.svg" alt="WCBカフェ　ホーム"></a></h1>
+                <!--
+                <h1>タグ内にロゴ画像を配置
+                    src=画像の場所
+                    alt=画像が表示されなかった時の代替文字
+                <a href>でロゴを押した際にトップページに戻るように設定
+                -->
+            <nav>
+                <!--
+                    ナビゲーションメニューの作成
+                -->
+                <ul class="main-nav">
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="contact">Contact</a></li>
+                    <!--
+                        <a href>でナビゲーションメニューのリンクを指定
+                    -->
+                </ul>
+            </nav>
+            </header>
+
+                <div class="home-content wrapper">
+                    <!-- ホームコンテンツクラスの作成 -->
+                    <h2 class="page-title">We'll Make Your Day</h2>
+                    <p>おしゃれなカフェで癒されてみませんか？無添加の食材で体の中からリフレッシュ。</p>
+                    <!-- 見出しとなる文章の記述 -->
+                    <a class="button" href="menu.html">メニューを見る</a>
+                    <!-- メニューを見るボタンの作成 -->
+                </div><!-- /.home-content -->
+        </div><!-- /#home -->
+    </body>
+</html>
